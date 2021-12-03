@@ -43,8 +43,6 @@ do
         then 
            echo ""
         else
-           echo "$((r))"
-           echo "$((d))"
            parallel_function "$url" &
            diff md5.$r md5.$d  >/dev/null 2>&1
            if [ $? -eq 1 ]

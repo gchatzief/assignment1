@@ -25,21 +25,22 @@ do
 done < "$filename1"
 
 filename='/home/george/testdir/assignment1/askisi1/URL'
-n=0
+n=1
 
 while IFS1= read -r line
 do 
 d=$((n+k))
-if [[ $(echo $url |cut -c1-1) = "#" ]]
+if [[ $(echo $line |cut -c1-1) == "#" ]]
 then 
  echo ""
+ 
 fi
 wget -O - $line | tee f.$d | md5sum > m.$d
 
 
        if [ $d -eq $n ]
        then 
-           r=0
+           r=1
            echo " $line INIT"
        else
            diff m.$r m.$d  >/dev/null 2>&1

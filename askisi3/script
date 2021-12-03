@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+file='/home/george/testdir/assignment1/askisi3/19033.txt.utf-8'
+
+
+while IFS= read -r line
+do
+
+  for word in $line; do
+        echo "${word,,}" | sed 's/,//g' | sed 's/!//g' | tr -d . | sed 's/-//g' | sed 's/://g' | sed 's/1//g' | sed 's/2//g' | sed 's/3//g' | sed 's/4//g' | sed 's/5//g' | sed 's/6//g' | sed 's/7//g' | sed 's/8//g' | sed 's/9//g' | sed 's/0//g' | sed 's/(//g' | sed 's/)//g' | sed 's/;//g' | sed 's/?//g' | sed 's/#//g' | tr -d [ | tr -d ] | sed 's/_//g'
+
+
+
+
+
+    done
+
+
+done < "$file"
+
+
